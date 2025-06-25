@@ -10,15 +10,15 @@ This project provides an efficient implementation of Football World Cup Score Bo
 
 ## Overview 
 
-The implementation provides methods that allows to:
+The implementation provides methods that allow to:
 1. Start a game
 2. Finish a game
 3. Update score
 4. Get summary of the scores ordered by total score in descending order
 
-Typical Wold Cup hosts around 64 matches which means that number and frequency of operations 1, 2 and 3 is quite limited. On the other hand, the number of requests for operation 4 (get summary) can be expected to reach thousands per second because the number of fans/users is quite unlimited. Hence, this implementation prioritizes the efficiency of operation 4. 
+Typical Wold Cup hosts around 64 matches which means that the number and frequency of operations 1, 2 and 3 is quite limited. On the other hand, the number of requests for operation 4 (get summary) can be expected to reach thousands per second because the number of fans/users is quite unlimited. Hence, this implementation prioritizes the efficiency of operation 4. 
 
-The beforementioned operations have the following approximate time complexities:
+The aforementioned operations have the following approximate time complexities:
 
 
 1. Start a game - _O(logN)_
