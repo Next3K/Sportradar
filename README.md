@@ -10,20 +10,24 @@ This project provides an efficient implementation of Football World Bup Score Bo
 
 ## Overview 
 
-The implementation provides an interface that allows to:
+The implementation provides methods that allows to:
 1. Start a game
 2. Finish a game
 3. Update score
-4. Get summary of the scores by total score
+4. Get summary of the scores ordered by total score in descending order
 
-It has been assumed that operation 4. will be the most commonly used since the number of games is usually quite low and number 
-of potential fans demanding a summary of the games is quite unlimited. Hence, the implementation prioritizes the efficiency of operation 4. 
+Typical Wold Cup hosts around 64 matches which means that number and frequency of operations 1, 2 and 3 is quite limited. On the other hand, the number of requests for operation 4 (get summary) can be expected to reach thousands per second because the number of fans/users is quite unlimited. Hence, this implementation prioritizes the efficiency of operation 4. 
 
-The beforementioned operations have the following time complexities:
-1. _O(logN)_
-2. _O(logN)_
-3. _O(logN)_
-4. _O(N)_
+The beforementioned operations have the following approximate time complexities:
+
+
+1. Start a game - _O(logN)_
+2. Finish a game - _O(logN)_
+3. Update score - _O(logN)_
+4. Get summary - _O(N)_
+
+ 
+
 
 ## Installation
 
@@ -34,10 +38,14 @@ git clone https://github.com/Next3K/Sportradar.git
 cd Sportradar 
 ```
 
-Make sure Maven is installed and your Java version is 17 or higher.
+Make sure that Maven and Java (17+) are installed.
 
 ```bash
 mvn --version
+```
+
+```bash
+java --version
 ```
 
 Install all dependencies with Maven.
@@ -46,13 +54,46 @@ Install all dependencies with Maven.
 mvn clean install 
 ```
 
-Modify the Main.java code to perform any logic according to your liking and run the app.
-
 Run the app.
 
 ```bash
-mvn install 
+java -cp target/Sportradar-1.0-SNAPSHOT.jar org.example.Main
 ```
+You van modify the Main.java source code to perform any logic according to your liking. 
+
+An example output:
+
+```bash
+Starting World Cup
+----------- Current Games -----------
+SPAIN - BRAZIL: 2 - 3
+MEXICO - CANADA: 0 - 5
+GERMANY - FRANCE: 2 - 2
+URUGUAY - PORTUGAL: 1 - 1
+POLAND - JAPAN: 1 - 0
+ARGENTINA - SAUDI_ARABIA: 0 - 1
+------------------------------------- 
+
+
+----------- Current Games -----------
+SPAIN - BRAZIL: 4 - 3
+MEXICO - CANADA: 0 - 6
+GERMANY - FRANCE: 3 - 2
+URUGUAY - PORTUGAL: 2 - 1
+POLAND - JAPAN: 1 - 1
+ARGENTINA - SAUDI_ARABIA: 1 - 1
+------------------------------------- 
+
+
+----------- Current Games -----------
+POLAND - JAPAN: 3 - 2
+ARGENTINA - SAUDI_ARABIA: 1 - 3
+------------------------------------- 
+
+
+Finished in: 17 ms
+```
+
 
 ## License 
 This project is licensed under the MIT License – see the [LICENSE](./LICENSE) file for details.
