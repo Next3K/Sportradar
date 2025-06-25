@@ -59,7 +59,6 @@ Run the app.
 ```bash
 java -cp target/Sportradar-1.0-SNAPSHOT.jar org.example.Main
 ```
-You van modify the Main.java source code to perform any logic according to your liking. 
 
 An example output:
 
