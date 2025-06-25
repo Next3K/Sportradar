@@ -1,6 +1,6 @@
 # Game Board  
 
-This project provides an efficient implementation of Football World Bup Score Board.
+This project provides an efficient implementation of Football World Cup Score Board.
 
 ## Table of Contents
 
